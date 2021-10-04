@@ -23,7 +23,7 @@ public class SnsController {
     @Autowired
     private AmazonSNSClient amazonSNSClient;
 
-    // URL - http://localhost:10093/addSubscription/myemail@somecompany.com
+    // URL - http://localhost:8080/addSubscription/myemail@somecompany.com
     @PostMapping(value = "/addSubscription/{email}")
     public ResponseEntity<String> addSubscription(@PathVariable final String email) {
         log.info("Adding new email subscription = {} to the topic.", email);
@@ -32,7 +32,7 @@ public class SnsController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    // URL - http://localhost:10093/sendNotification
+    // URL - http://localhost:8080/sendNotification
     // Sample request body -
     //	{
     //		"subject": "Springboot sns demo email",
